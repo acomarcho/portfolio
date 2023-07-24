@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { IconTrophy } from "@tabler/icons-react";
 
 export default function Achievements() {
