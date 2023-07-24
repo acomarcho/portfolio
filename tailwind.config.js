@@ -10,6 +10,14 @@ module.exports = {
       fontFamily: {
         jakarta: ['var(--font-plus-jakarta-sans)'],
         outfit: ['var(--font-outfit)'],
+      },
+      colors: {
+        offwhite: '#F8F8F8',
+        lightgray: '#F0F0F0',
+        darkgray: '#CCCCCC',
+        black: '#333333',
+        primary: '#FFA500',
+        secondary: '#FF5733',
       }
     },
   },
