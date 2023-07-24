@@ -6,18 +6,23 @@ import Achievements from "@/components/home/achievements";
 import Education from "@/components/home/education";
 import ContactInformation from "@/components/home/contact-information";
 import Footer from "@/components/home/footer";
+import { Fade } from "react-awesome-reveal";
+import ScrollToTop from "@/components/home/scroll-to-top";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <Skills />
-      <FeaturedPortfolio />
-      <WorkExperience />
-      <Achievements />
-      <Education />
-      <ContactInformation />
-      <Footer />
+      <Fade>
+        <Header />
+        <Skills />
+        <FeaturedPortfolio />
+        <WorkExperience />
+        <Achievements />
+        <Education />
+        <ContactInformation />
+        <Footer />
+      </Fade>
+      <ScrollToTop />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Tooltip } from "@mantine/core";
+import { Fade } from "react-awesome-reveal";
 
 const feImages = [
   {
@@ -110,70 +111,82 @@ export default function Skills() {
         <h1 className="heading font-bold">Skills</h1>
         <div className="flex flex-col gap-[0.5rem] lg:flex-row lg:gap-[8rem]">
           <div className="lg:w-[20rem]">
-            <p className="paragraph font-bold">Frontend</p>
-            <div className="flex gap-[0.5rem] mt-[0.25rem]">
-              {feImages.map((image) => (
-                <Tooltip key={image.label} label={image.label}>
-                  <Image
-                    src={image.src}
-                    alt={image.label}
-                    width={32}
-                    height={32}
-                    className="z-10 drop-shadow-lg"
-                  />
-                </Tooltip>
-              ))}
-            </div>
+            <Fade>
+              <p className="paragraph font-bold">Frontend</p>
+              <div className="flex gap-[0.5rem] mt-[0.25rem]">
+                {feImages.map((image) => (
+                  <Tooltip key={image.label} label={image.label}>
+                    <Image
+                      src={image.src}
+                      alt={image.label}
+                      width={32}
+                      height={32}
+                      className="z-10 drop-shadow-lg"
+                    />
+                  </Tooltip>
+                ))}
+              </div>
+            </Fade>
           </div>
           <div className="lg:w-[20rem]">
-            <p className="paragraph font-bold">Backend</p>
-            <div className="flex gap-[0.5rem] mt-[0.25rem]">
-              {beImages.map((image) => (
-                <Tooltip key={image.label} label={image.label} className="z-10">
-                  <Image
-                    src={image.src}
-                    alt={image.label}
-                    width={32}
-                    height={32}
-                    className="z-10 drop-shadow-lg"
-                  />
-                </Tooltip>
-              ))}
-            </div>
+            <Fade>
+              <p className="paragraph font-bold">Backend</p>
+              <div className="flex gap-[0.5rem] mt-[0.25rem]">
+                {beImages.map((image) => (
+                  <Tooltip
+                    key={image.label}
+                    label={image.label}
+                    className="z-10"
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.label}
+                      width={32}
+                      height={32}
+                      className="z-10 drop-shadow-lg"
+                    />
+                  </Tooltip>
+                ))}
+              </div>
+            </Fade>
           </div>
         </div>
         <div className="flex flex-col gap-[0.5rem] lg:flex-row lg:gap-[8rem]">
           <div className="lg:w-[20rem]">
-            <p className="paragraph font-bold">Design</p>
-            <div className="flex gap-[0.5rem] mt-[0.25rem]">
-              {designImages.map((image) => (
-                <Tooltip key={image.label} label={image.label}>
-                  <Image
-                    src={image.src}
-                    alt={image.label}
-                    width={32}
-                    height={32}
-                    className="z-10 drop-shadow-lg"
-                  />
-                </Tooltip>
-              ))}
-            </div>
+            <Fade>
+              <p className="paragraph font-bold">Design</p>
+              <div className="flex gap-[0.5rem] mt-[0.25rem]">
+                {designImages.map((image) => (
+                  <Tooltip key={image.label} label={image.label}>
+                    <Image
+                      src={image.src}
+                      alt={image.label}
+                      width={32}
+                      height={32}
+                      className="z-10 drop-shadow-lg"
+                    />
+                  </Tooltip>
+                ))}
+              </div>
+            </Fade>
           </div>
           <div className="lg:w-[20rem]">
-            <p className="paragraph font-bold">Others</p>
-            <div className="flex gap-[0.5rem] mt-[0.25rem]">
-              {otherImages.map((image) => (
-                <Tooltip key={image.label} label={image.label}>
-                  <Image
-                    src={image.src}
-                    alt={image.label}
-                    width={32}
-                    height={32}
-                    className="z-10"
-                  />
-                </Tooltip>
-              ))}
-            </div>
+            <Fade>
+              <p className="paragraph font-bold">Others</p>
+              <div className="flex gap-[0.5rem] mt-[0.25rem]">
+                {otherImages.map((image) => (
+                  <Tooltip key={image.label} label={image.label}>
+                    <Image
+                      src={image.src}
+                      alt={image.label}
+                      width={32}
+                      height={32}
+                      className="z-10"
+                    />
+                  </Tooltip>
+                ))}
+              </div>
+            </Fade>
           </div>
         </div>
       </div>
