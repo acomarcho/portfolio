@@ -81,9 +81,31 @@ const otherImages = [
   },
 ];
 
+const DecorationVectors = () => {
+  return (
+    <>
+      <Image
+        src="/vectors/skills-1.svg"
+        alt=""
+        width={25}
+        height={82}
+        className="absolute right-0 top-[3rem] -z-10"
+      />
+      <Image
+        src="/vectors/skills-2.svg"
+        alt=""
+        width={55}
+        height={111}
+        className="absolute left-0 bottom-[3rem] -z-10"
+      />
+    </>
+  );
+};
+
 export default function Skills() {
   return (
-    <div className="decoration-wrapper bg-lightgray">
+    <div className="decoration-wrapper bg-lightgray -z-20">
+      <DecorationVectors />
       <div className="wrapper flex flex-col gap-[0.5rem] lg:gap-[1rem]">
         <h1 className="heading font-bold">Skills</h1>
         <div className="flex flex-col gap-[0.5rem] lg:flex-row lg:gap-[8rem]">
