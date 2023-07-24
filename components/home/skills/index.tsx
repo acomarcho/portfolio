@@ -87,15 +87,15 @@ const DecorationVectors = () => {
       <Image
         src="/vectors/skills-1.svg"
         alt=""
-        width={25}
-        height={82}
+        width={54}
+        height={117}
         className="absolute right-0 top-[3rem]"
       />
       <Image
         src="/vectors/skills-2.svg"
         alt=""
-        width={55}
-        height={111}
+        width={67}
+        height={121}
         className="absolute left-0 bottom-[3rem]"
       />
     </>
@@ -119,7 +119,7 @@ export default function Skills() {
                     alt={image.label}
                     width={32}
                     height={32}
-                    className="z-10"
+                    className="z-10 drop-shadow-lg"
                   />
                 </Tooltip>
               ))}
@@ -135,7 +135,7 @@ export default function Skills() {
                     alt={image.label}
                     width={32}
                     height={32}
-                    className="z-10"
+                    className="z-10 drop-shadow-lg"
                   />
                 </Tooltip>
               ))}
@@ -153,7 +153,7 @@ export default function Skills() {
                     alt={image.label}
                     width={32}
                     height={32}
-                    className="z-10"
+                    className="z-10 drop-shadow-lg"
                   />
                 </Tooltip>
               ))}
