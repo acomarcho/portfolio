@@ -1,29 +1,84 @@
 import Image from "next/image";
+import { Tooltip } from "@mantine/core";
 
 const feImages = [
-  "/images/fe-1.png",
-  "/images/fe-2.png",
-  "/images/fe-3.png",
-  "/images/fe-4.png",
-  "/images/fe-5.png",
-  "/images/fe-6.png",
+  {
+    label: "React",
+    src: "/images/fe-1.png",
+  },
+  {
+    label: "Next",
+    src: "/images/fe-2.png",
+  },
+  {
+    label: "Tailwind",
+    src: "/images/fe-3.png",
+  },
+  {
+    label: "Mantine",
+    src: "/images/fe-4.png",
+  },
+  {
+    label: "Ant Design",
+    src: "/images/fe-5.png",
+  },
+  {
+    label: "SASS",
+    src: "/images/fe-6.png",
+  },
 ];
 
 const beImages = [
-  "/images/be-1.png",
-  "/images/be-2.png",
-  "/images/be-3.png",
-  "/images/be-4.png",
-  "/images/be-5.png",
-  "/images/be-6.png",
+  {
+    label: "Express",
+    src: "/images/be-1.png",
+  },
+  {
+    label: "PostgreSQL",
+    src: "/images/be-2.png",
+  },
+  {
+    label: "Go",
+    src: "/images/be-3.png",
+  },
+  {
+    label: "MongoDB",
+    src: "/images/be-4.png",
+  },
+  {
+    label: "Prisma",
+    src: "/images/be-5.png",
+  },
+  {
+    label: "MySQL",
+    src: "/images/be-6.png",
+  },
 ];
 
-const designImages = ["/images/design-1.png", "/images/design-2.png"];
+const designImages = [
+  {
+    label: "Figma",
+    src: "/images/design-1.png",
+  },
+  {
+    label: "Adobe Photoshop",
+    src: "/images/design-2.png",
+  },
+];
 
 const otherImages = [
-  "/images/others-1.png",
-  "/images/others-2.png",
-  "/images/others-3.png",
+  {
+    label: "Docker",
+    src: "/images/others-1.png",
+  },
+  {
+    label: "Google Cloud",
+    src: "/images/others-2.png",
+  },
+  {
+    label: "Firebase",
+    src: "/images/others-3.png",
+  },
 ];
 
 export default function Skills() {
@@ -36,7 +91,14 @@ export default function Skills() {
             <p className="paragraph font-bold">Frontend</p>
             <div className="flex gap-[0.5rem] mt-[0.25rem]">
               {feImages.map((image) => (
-                <Image key={image} src={image} alt="" width={32} height={32} />
+                <Tooltip key={image.label} label={image.label}>
+                  <Image
+                    src={image.src}
+                    alt={image.label}
+                    width={32}
+                    height={32}
+                  />
+                </Tooltip>
               ))}
             </div>
           </div>
@@ -44,7 +106,14 @@ export default function Skills() {
             <p className="paragraph font-bold">Backend</p>
             <div className="flex gap-[0.5rem] mt-[0.25rem]">
               {beImages.map((image) => (
-                <Image key={image} src={image} alt="" width={32} height={32} />
+                <Tooltip key={image.label} label={image.label}>
+                  <Image
+                    src={image.src}
+                    alt={image.label}
+                    width={32}
+                    height={32}
+                  />
+                </Tooltip>
               ))}
             </div>
           </div>
@@ -54,7 +123,14 @@ export default function Skills() {
             <p className="paragraph font-bold">Design</p>
             <div className="flex gap-[0.5rem] mt-[0.25rem]">
               {designImages.map((image) => (
-                <Image key={image} src={image} alt="" width={32} height={32} />
+                <Tooltip key={image.label} label={image.label}>
+                  <Image
+                    src={image.src}
+                    alt={image.label}
+                    width={32}
+                    height={32}
+                  />
+                </Tooltip>
               ))}
             </div>
           </div>
@@ -62,7 +138,14 @@ export default function Skills() {
             <p className="paragraph font-bold">Others</p>
             <div className="flex gap-[0.5rem] mt-[0.25rem]">
               {otherImages.map((image) => (
-                <Image key={image} src={image} alt="" width={32} height={32} />
+                <Tooltip key={image.label} label={image.label}>
+                  <Image
+                    src={image.src}
+                    alt={image.label}
+                    width={32}
+                    height={32}
+                  />
+                </Tooltip>
               ))}
             </div>
           </div>
