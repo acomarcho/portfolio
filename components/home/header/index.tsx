@@ -15,14 +15,14 @@ const HeaderVectors = () => {
         alt=""
         width={51}
         height={116}
-        className="absolute left-0 top-[9rem] -z-10"
+        className="hidden absolute left-0 md:block -z-10 md:top-[3rem]"
       />
       <Image
         src="/vectors/header-3.svg"
         alt=""
         width={64}
         height={88}
-        className="absolute right-0 top-[12.5rem] -z-10"
+        className="absolute right-0 top-[12.5rem] -z-10 md:top-[20rem]"
       />
       <Image
         src="/vectors/header-4.svg"
@@ -36,7 +36,7 @@ const HeaderVectors = () => {
         alt=""
         width={56}
         height={91}
-        className="absolute right-0 bottom-[1rem] -z-10"
+        className="absolute right-0 bottom-[1rem] -z-10 md:hidden"
       />
     </>
   );
