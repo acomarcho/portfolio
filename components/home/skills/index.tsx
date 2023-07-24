@@ -89,14 +89,14 @@ const DecorationVectors = () => {
         alt=""
         width={25}
         height={82}
-        className="absolute right-0 top-[3rem] -z-10"
+        className="absolute right-0 top-[3rem]"
       />
       <Image
         src="/vectors/skills-2.svg"
         alt=""
         width={55}
         height={111}
-        className="absolute left-0 bottom-[3rem] -z-10"
+        className="absolute left-0 bottom-[3rem]"
       />
     </>
   );
@@ -104,7 +104,7 @@ const DecorationVectors = () => {
 
 export default function Skills() {
   return (
-    <div className="decoration-wrapper bg-lightgray -z-20">
+    <div className="decoration-wrapper bg-lightgray">
       <DecorationVectors />
       <div className="wrapper flex flex-col gap-[0.5rem] lg:gap-[1rem]">
         <h1 className="heading font-bold">Skills</h1>
@@ -119,6 +119,7 @@ export default function Skills() {
                     alt={image.label}
                     width={32}
                     height={32}
+                    className="z-10"
                   />
                 </Tooltip>
               ))}
@@ -128,12 +129,13 @@ export default function Skills() {
             <p className="paragraph font-bold">Backend</p>
             <div className="flex gap-[0.5rem] mt-[0.25rem]">
               {beImages.map((image) => (
-                <Tooltip key={image.label} label={image.label}>
+                <Tooltip key={image.label} label={image.label} className="z-10">
                   <Image
                     src={image.src}
                     alt={image.label}
                     width={32}
                     height={32}
+                    className="z-10"
                   />
                 </Tooltip>
               ))}
@@ -151,6 +153,7 @@ export default function Skills() {
                     alt={image.label}
                     width={32}
                     height={32}
+                    className="z-10"
                   />
                 </Tooltip>
               ))}
@@ -166,6 +169,7 @@ export default function Skills() {
                     alt={image.label}
                     width={32}
                     height={32}
+                    className="z-10"
                   />
                 </Tooltip>
               ))}
