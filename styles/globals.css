@@ -22,11 +22,11 @@
     @apply max-w-[1160px] mx-auto p-[2rem] z-10 relative;
   }
   .button-primary {
-    @apply py-[0.5rem] bg-primary text-black text-center block lg:w-[15rem] font-bold transition-all hover:drop-shadow-lg;
+    @apply py-[0.5rem] bg-primary text-black text-center block lg:w-[18rem] font-bold transition-all hover:drop-shadow-lg text-[1rem] lg:text-[1.25rem];
     font-family: var(--font-plus-jakarta-sans);
   }
   .button-secondary {
-    @apply py-[0.5rem] bg-secondary text-black text-center block lg:w-[15rem] font-bold transition-all hover:drop-shadow-lg;
+    @apply py-[0.5rem] bg-secondary text-black text-center block lg:w-[18rem] font-bold transition-all hover:drop-shadow-lg text-[1rem] lg:text-[1.25rem];
     font-family: var(--font-plus-jakarta-sans);
   }
 }

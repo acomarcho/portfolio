@@ -5,6 +5,7 @@ import WorkExperience from "@/components/home/work-experience";
 import Achievements from "@/components/home/achievements";
 import Education from "@/components/home/education";
 import ContactInformation from "@/components/home/contact-information";
+import Footer from "@/components/home/footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Achievements />
       <Education />
       <ContactInformation />
+      <Footer />
     </>
   );
 }
