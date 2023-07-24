@@ -13,28 +13,28 @@ const HeaderVectors = () => {
       <Image
         src="/vectors/header-2.svg"
         alt=""
-        width={20}
+        width={51}
         height={116}
-        className="absolute left-0 top-[9.375rem] -z-10"
+        className="absolute left-0 top-[9rem] -z-10"
       />
       <Image
         src="/vectors/header-3.svg"
         alt=""
-        width={44}
-        height={73}
+        width={64}
+        height={88}
         className="absolute right-0 top-[12.5rem] -z-10"
       />
       <Image
         src="/vectors/header-4.svg"
         alt=""
-        width={23}
+        width={33}
         height={100}
         className="absolute left-0 bottom-[5.25rem] -z-10"
       />
       <Image
         src="/vectors/header-5.svg"
         alt=""
-        width={33}
+        width={56}
         height={91}
         className="absolute right-0 bottom-[1rem] -z-10"
       />
