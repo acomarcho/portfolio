@@ -1,8 +1,30 @@
 import Image from "next/image";
 
+const DecorationVectors = () => {
+  return (
+    <>
+      <Image
+        src="/vectors/portfolio-1.svg"
+        alt=""
+        width={115}
+        height={218}
+        className="absolute left-0 top-[4rem]"
+      />
+      <Image
+        src="/vectors/portfolio-2.svg"
+        alt=""
+        width={63}
+        height={138}
+        className="absolute right-0 top-[10rem]"
+      />
+    </>
+  );
+};
+
 export default function FeaturedPortfolio() {
   return (
     <div className="decoration-wrapper">
+      <DecorationVectors />
       <div className="wrapper">
         <h1 className="heading font-bold">Featured Portfolio</h1>
         <Image
@@ -10,6 +32,7 @@ export default function FeaturedPortfolio() {
           alt="CariMentor"
           width={1280}
           height={809}
+          className="z-10"
         />
         <h1 className="paragraph font-bold">CariMentor</h1>
         <p className="paragraph italic">
