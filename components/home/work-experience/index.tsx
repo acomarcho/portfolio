@@ -15,6 +15,7 @@ export default function WorkExperience() {
               height={128}
               alt="Pintarnya"
               className="w-[2rem] lg:w-[4rem]"
+              quality={100}
             />
             <p className="paragraph font-bold">Pintarnya</p>
           </div>

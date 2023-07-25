@@ -9,7 +9,13 @@ export default function Education() {
         <Fade>
           <h1 className="heading font-bold">Education</h1>
           <div className="flex items-center gap-[1rem]">
-            <Image src="/images/itb.png" alt="ITB" width={32} height={32} />
+            <Image
+              src="/images/itb.png"
+              alt="ITB"
+              width={32}
+              height={32}
+              quality={100}
+            />
             <p className="paragraph font-bold">
               Bandung Institute of Technology
             </p>

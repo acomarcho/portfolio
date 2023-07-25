@@ -122,6 +122,7 @@ export default function Skills() {
                       width={32}
                       height={32}
                       className="z-10 drop-shadow-lg"
+                      quality={100}
                     />
                   </Tooltip>
                 ))}
@@ -144,6 +145,7 @@ export default function Skills() {
                       width={32}
                       height={32}
                       className="z-10 drop-shadow-lg"
+                      quality={100}
                     />
                   </Tooltip>
                 ))}
@@ -164,6 +166,7 @@ export default function Skills() {
                       width={32}
                       height={32}
                       className="z-10 drop-shadow-lg"
+                      quality={100}
                     />
                   </Tooltip>
                 ))}
@@ -182,6 +185,7 @@ export default function Skills() {
                       width={32}
                       height={32}
                       className="z-10"
+                      quality={100}
                     />
                   </Tooltip>
                 ))}

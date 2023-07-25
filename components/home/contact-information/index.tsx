@@ -9,7 +9,13 @@ export default function ContactInformation() {
         <Fade>
           <h1 className="heading font-bold">Contact Information</h1>
           <div className="flex items-center gap-[1rem]">
-            <Image src="/images/gmail.png" alt="Gmail" width={32} height={32} />
+            <Image
+              src="/images/gmail.png"
+              alt="Gmail"
+              width={32}
+              height={32}
+              quality={100}
+            />
             <a href="mailto:acoxstpd@gmail.com" className="paragraph">
               acoxstpd@gmail.com
             </a>
@@ -20,6 +26,7 @@ export default function ContactInformation() {
               alt="LinkedIn"
               width={32}
               height={32}
+              quality={100}
             />
             <a
               href="https://www.linkedin.com/in/marchotridyo/"
@@ -36,6 +43,7 @@ export default function ContactInformation() {
               alt="GitHub"
               width={32}
               height={32}
+              quality={100}
             />
             <a
               href="https://github.com/acomarcho"

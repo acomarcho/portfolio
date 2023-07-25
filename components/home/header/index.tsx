@@ -54,6 +54,7 @@ export default function Header() {
             alt="Profile picture"
             width={148}
             height={136}
+            quality={100}
           />
           <h1 className="heading">
             Hi, I am <span className="font-bold">Marcho</span>!

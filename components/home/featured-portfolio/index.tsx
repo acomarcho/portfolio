@@ -35,6 +35,7 @@ export default function FeaturedPortfolio() {
             width={1280}
             height={809}
             className="z-10"
+            quality={100}
           />
           <h1 className="paragraph font-bold">CariMentor</h1>
           <p className="paragraph italic">
