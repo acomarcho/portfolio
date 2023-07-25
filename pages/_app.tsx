@@ -22,6 +22,10 @@ export default function App({ Component, pageProps }: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <meta
+          name="description"
+          content="Marchotridyo is a full-stack web developer with a good sense in design and product management. You can see his portfolio and blog here."
+        />
       </Head>
       <main
         className={`${outfit.variable} ${plusJakartaSans.variable} bg-offwhite`}
