@@ -8,6 +8,7 @@ import { BlogPost } from "@/lib/constants/blog";
 import { readOneBlog } from "@/lib/api/blog";
 import { readAllBlogs } from "@/lib/api/blog";
 import Navbar, { NavMargin } from "@/components/common/navbar";
+import SinglePost from "@/components/blog/single-post";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogs = await readAllBlogs();
@@ -44,6 +45,7 @@ export const getStaticProps: GetStaticProps<{
 
 export default function BlogPage({
   blogPost,
+  success,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -52,7 +54,7 @@ export default function BlogPage({
       </Head>
       <Navbar />
       <NavMargin />
-      <p>{JSON.stringify(blogPost)}</p>
+      <SinglePost blogPost={blogPost} success={success} />
     </>
   );
 }
