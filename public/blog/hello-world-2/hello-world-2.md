@@ -2,7 +2,7 @@
 slug: hello-world-2
 title: Id ut ut qui veniam.
 summary: Repudiandae nobis at. Facere atque laudantium suscipit vel accusamus. Dignissimos veniam ut a qui rerum alias. Consequuntur reiciendis error optio adipisci explicabo facere dolor.
-date: 25 Juli 2023
+date: 2023-07-26
 ---
 
 # Hello World 2

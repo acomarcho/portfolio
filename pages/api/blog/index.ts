@@ -43,7 +43,7 @@ export default async function handler(
     crawlFolderForMarkdownFiles(path.resolve("./public", "blog"));
 
     // Read the actual markdown file
-    let blogs: Blog[] = await Promise.all(
+    const blogs: Blog[] = await Promise.all(
       markdownFiles.map(async (path) => {
         const fileContent = await asyncFs.readFile(path, "utf-8");
 
@@ -55,6 +55,9 @@ export default async function handler(
           date: parsedContent.data.date,
         };
       })
+    );
+    blogs.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
 
     res.status(200).json({ blogs });
