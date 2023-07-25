@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
+import Link from "next/link";
 
 const HeaderVectors = () => {
   return (
@@ -81,6 +82,12 @@ export default function Header() {
             <span className="font-bold">algorithm and data structures</span>,{" "}
             <span className="font-bold">object-oriented programming</span>, and{" "}
             <span className="font-bold">software engineering</span>.
+          </p>
+          <p className="paragraph">
+            I also occasionally write blog posts!{" "}
+            <Link href="/blog" className="text-secondary underline">
+              Check my writings here.
+            </Link>
           </p>
         </Fade>
       </div>

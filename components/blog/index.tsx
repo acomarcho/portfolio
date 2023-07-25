@@ -12,7 +12,7 @@ export default function Blogs({ blogs }: { blogs: BlogMetadata[] }) {
           <h1 className="relative heading font-bold">{"Marcho's Blog"}</h1>
         </div>
         <p className="paragraph italic">
-          Writing stories and blog posts: Where imagination meets connection.
+          Stories and other blog posts: Where imagination meets connection.
         </p>
         <div className="flex flex-col gap-[1rem] mt-[1rem]">
           <Fade>
