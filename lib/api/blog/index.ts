@@ -3,6 +3,7 @@ import asyncFs from "fs/promises";
 import path from "path";
 import grayMatter from "gray-matter";
 import { BlogMetadata } from "@/lib/constants/blog";
+import { BlogPost } from "@/lib/constants/blog";
 
 export const readAllBlogs = async () => {
   // Crawl markdown files
@@ -43,4 +44,20 @@ export const readAllBlogs = async () => {
   blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return blogs;
+};
+
+export const readOneBlog = async (slug: string) => {
+  const fileContent = await asyncFs.readFile(
+    path.resolve("./public", "blog", slug, `${slug}.md`),
+    "utf-8"
+  );
+  const parsedContent = grayMatter(fileContent);
+  const blogPost: BlogPost = {
+    slug: parsedContent.data.slug,
+    title: parsedContent.data.title,
+    summary: parsedContent.data.summary,
+    date: parsedContent.data.date.toISOString(),
+    content: parsedContent.content,
+  };
+  return blogPost;
 };
