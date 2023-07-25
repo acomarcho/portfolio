@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 export default function WorkExperience() {
   return (
-    <div className="decoration-wrapper bg-lightgray">
+    <div className="decoration-wrapper bg-lightgray" id="work-experience">
       <div className="absolute h-[calc(100%-4rem)] w-[1rem] bg-secondary right-0 top-[2rem]"></div>
       <div className="wrapper flex flex-col gap-[0.5rem] lg:gap-[1rem]">
         <Fade>

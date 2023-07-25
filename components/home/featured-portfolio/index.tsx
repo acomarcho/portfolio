@@ -24,7 +24,7 @@ const DecorationVectors = () => {
 
 export default function FeaturedPortfolio() {
   return (
-    <div className="decoration-wrapper">
+    <div className="decoration-wrapper" id="featured-portfolio">
       <DecorationVectors />
       <div className="wrapper">
         <Fade>

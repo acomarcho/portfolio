@@ -23,7 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <main className={`${outfit.variable} ${plusJakartaSans.variable}`}>
+      <main
+        className={`${outfit.variable} ${plusJakartaSans.variable} bg-offwhite`}
+      >
         <MantineProvider
           withGlobalStyles
           withNormalizeCSS

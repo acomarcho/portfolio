@@ -45,7 +45,7 @@ const HeaderVectors = () => {
 
 export default function Header() {
   return (
-    <div className="decoration-wrapper">
+    <div className="decoration-wrapper" id="about-me">
       <HeaderVectors />
       <div className="wrapper flex flex-col gap-[0.5rem] lg:gap-[1rem]">
         <Fade>

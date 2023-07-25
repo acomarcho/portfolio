@@ -8,10 +8,13 @@ import ContactInformation from "@/components/home/contact-information";
 import Footer from "@/components/home/footer";
 import { Fade } from "react-awesome-reveal";
 import ScrollToTop from "@/components/home/scroll-to-top";
+import Navbar, { NavMargin } from "@/components/common/navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
+      <NavMargin />
       <Fade>
         <Header />
         <Skills />

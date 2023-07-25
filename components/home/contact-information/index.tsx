@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 export default function ContactInformation() {
   return (
-    <div className="decoration-wrapper">
+    <div className="decoration-wrapper" id="contact-information">
       <div className="absolute h-[calc(100%-4rem)] w-[1rem] bg-secondary left-0 top-[2rem]"></div>
       <div className="wrapper flex flex-col gap-[0.5rem] lg:gap-[1rem]">
         <Fade>

@@ -105,7 +105,7 @@ const DecorationVectors = () => {
 
 export default function Skills() {
   return (
-    <div className="decoration-wrapper bg-lightgray">
+    <div className="decoration-wrapper bg-lightgray" id="skills">
       <DecorationVectors />
       <div className="wrapper flex flex-col gap-[0.5rem] lg:gap-[1rem]">
         <h1 className="heading font-bold">Skills</h1>
