@@ -76,7 +76,7 @@ export default function Header() {
             <span className="font-bold">
               tutored many computer science related subjects
             </span>{" "}
-            including database,{" "}
+            including <span className="font-bold">database</span>,{" "}
             <span className="font-bold">artificial intelligence</span>,{" "}
             <span className="font-bold">algorithm and data structures</span>,{" "}
             <span className="font-bold">object-oriented programming</span>, and{" "}
