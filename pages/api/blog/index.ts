@@ -4,17 +4,7 @@ import fs from "fs";
 import asyncFs from "fs/promises";
 import path from "path";
 import grayMatter from "gray-matter";
-
-type Blog = {
-  slug: string;
-  title: string;
-  summary: string;
-  date: string;
-};
-
-type GetBlogListResponse = {
-  blogs: Blog[];
-};
+import { BlogMetadata, GetBlogListResponse } from "@/lib/constants/blog";
 
 export default async function handler(
   req: NextApiRequest,
@@ -43,7 +33,7 @@ export default async function handler(
     crawlFolderForMarkdownFiles(path.resolve("./public", "blog"));
 
     // Read the actual markdown file
-    const blogs: Blog[] = await Promise.all(
+    const blogs: BlogMetadata[] = await Promise.all(
       markdownFiles.map(async (path) => {
         const fileContent = await asyncFs.readFile(path, "utf-8");
 
