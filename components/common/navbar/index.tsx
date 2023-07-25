@@ -7,31 +7,31 @@ import { Menu } from "@mantine/core";
 
 const links = [
   {
-    href: "#about-me",
+    href: "/#about-me",
     label: "About me",
   },
   {
-    href: "#skills",
+    href: "/#skills",
     label: "Skills",
   },
   {
-    href: "#featured-portfolio",
+    href: "/#featured-portfolio",
     label: "Featured portfolio",
   },
   {
-    href: "#work-experience",
+    href: "/#work-experience",
     label: "Work experience",
   },
   {
-    href: "#achievements",
+    href: "/#achievements",
     label: "Achievements",
   },
   {
-    href: "#education",
+    href: "/#education",
     label: "Education",
   },
   {
-    href: "#contact-information",
+    href: "/#contact-information",
     label: "Contact information",
   },
 ];
@@ -81,7 +81,7 @@ export default function Navbar() {
                     return (
                       <Menu.Item key={link.href}>
                         <ul>
-                          <a
+                          <Link
                             href={link.href}
                             className="date block h-full w-full px-[1rem] py-[0.5rem]"
                             onClick={() => {
@@ -89,12 +89,26 @@ export default function Navbar() {
                             }}
                           >
                             {link.label}
-                          </a>
+                          </Link>
                         </ul>
                       </Menu.Item>
                     );
                   })}
                 </li>
+                <Menu.Label>
+                  <span className="paragraph">Blog</span>
+                </Menu.Label>
+                <Menu.Item>
+                  <Link
+                    href="/blog"
+                    className="date block h-full w-full px-[1rem] py-[0.5rem]"
+                    onClick={() => {
+                      setIsDrawerOpen(false);
+                    }}
+                  >
+                    Home
+                  </Link>
+                </Menu.Item>
               </Menu.Dropdown>
             </Menu>
           </div>
@@ -111,7 +125,7 @@ export default function Navbar() {
           {links.map((link) => {
             return (
               <ul key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   className="paragraph"
                   onClick={() => {
@@ -119,11 +133,23 @@ export default function Navbar() {
                   }}
                 >
                   {link.label}
-                </a>
+                </Link>
               </ul>
             );
           })}
         </li>
+        <h1 className="heading underline font-bold mt-[2rem]">Blog</h1>
+        <div className="flex flex-col items-start gap-[0.5rem] mt-[1rem]">
+          <Link
+            href="/blog"
+            className="paragraph"
+            onClick={() => {
+              setIsDrawerOpen(false);
+            }}
+          >
+            Home
+          </Link>
+        </div>
       </Drawer>
     </nav>
   );
