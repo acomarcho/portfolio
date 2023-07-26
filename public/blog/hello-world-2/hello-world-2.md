@@ -14,3 +14,12 @@ Odio nostrum dolor quia ipsa voluptatibus. Veritatis sed enim et illum corrupti.
 Magnam rem nemo iure ullam quaerat saepe. Voluptas nesciunt tempore. Id repellat magni. In officia qui sequi illum omnis nisi commodi. Quia rerum unde qui sit voluptate quidem. Voluptatibus quia ad sed laborum at.
 
 ![CariMentor](/blog/hello-world-2/carimentor.png)
+
+```tsx
+const newArray = myArray.map((x) => {
+  return {
+    name: x.username,
+    email: x.email,
+  };
+});
+```

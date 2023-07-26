@@ -8,3 +8,10 @@ date: 2023-07-25
 # Hello world!
 
 Beatae maiores tempore aspernatur fugit expedita aut. Nihil asperiores assumenda impedit vel. Suscipit dolorem voluptas inventore unde. Ea et harum. Iure eveniet perspiciatis et ab vero repellendus.
+
+```py
+def main():
+  print("Hello World!")
+```
+
+In `Python`, we can use the following keyword: `in`.
