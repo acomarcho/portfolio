@@ -50,7 +50,8 @@ export default function BlogPage({
   return (
     <>
       <Head>
-        <title>{"Marcho's Blog"}</title>
+        <title>{success ? blogPost.title : "Post not found"}</title>
+        <meta name="description" content={blogPost.summary} />
       </Head>
       <Navbar />
       <NavMargin />

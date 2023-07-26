@@ -19,6 +19,7 @@ export default function BlogPage({
     <>
       <Head>
         <title>{"Marcho's Blog"}</title>
+        <meta name="description" content="I write about all the things I like!" />
       </Head>
       <Navbar />
       <NavMargin />
