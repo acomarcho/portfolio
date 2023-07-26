@@ -76,7 +76,7 @@ export default function Navbar() {
                 <Menu.Label>
                   <span className="paragraph">Home</span>
                 </Menu.Label>
-                <li className="flex flex-col items-start gap-[0.5rem] mt-[1rem]">
+                <li className="flex flex-col items-start gap-[0.5rem] mt-[0.5rem]">
                   {links.map((link) => {
                     return (
                       <Menu.Item key={link.href}>
@@ -95,10 +95,10 @@ export default function Navbar() {
                     );
                   })}
                 </li>
-                <Menu.Label>
+                <Menu.Label className="mt-[1rem]">
                   <span className="paragraph">Blog</span>
                 </Menu.Label>
-                <Menu.Item>
+                <Menu.Item className="mt-[0.5rem]">
                   <Link
                     href="/blog"
                     className="date block h-full w-full px-[1rem] py-[0.5rem]"
