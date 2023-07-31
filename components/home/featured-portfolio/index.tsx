@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
+import Link from "next/link";
 
 const DecorationVectors = () => {
   return (
@@ -64,6 +65,12 @@ export default function FeaturedPortfolio() {
               See source code
             </a>
           </div>
+          <p className="paragraph mt-[1rem]">
+            Check out all my portfolio{" "}
+            <Link href="/portfolio" className="text-secondary underline">
+              here!
+            </Link>
+          </p>
         </Fade>
       </div>
     </div>

@@ -109,6 +109,20 @@ export default function Navbar() {
                     Home
                   </Link>
                 </Menu.Item>
+                <Menu.Label className="mt-[1rem]">
+                  <span className="paragraph">Portfolio</span>
+                </Menu.Label>
+                <Menu.Item className="mt-[0.5rem]">
+                  <Link
+                    href="/portfolio"
+                    className="date block h-full w-full px-[1rem] py-[0.5rem]"
+                    onClick={() => {
+                      setIsDrawerOpen(false);
+                    }}
+                  >
+                    All portfolio
+                  </Link>
+                </Menu.Item>
               </Menu.Dropdown>
             </Menu>
           </div>
@@ -148,6 +162,18 @@ export default function Navbar() {
             }}
           >
             Home
+          </Link>
+        </div>
+        <h1 className="heading underline font-bold mt-[2rem]">Portfolio</h1>
+        <div className="flex flex-col items-start gap-[0.5rem] mt-[1rem]">
+          <Link
+            href="/portfolio"
+            className="paragraph"
+            onClick={() => {
+              setIsDrawerOpen(false);
+            }}
+          >
+            All portfolio
           </Link>
         </div>
       </Drawer>
