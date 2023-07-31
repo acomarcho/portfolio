@@ -48,7 +48,7 @@ export default function FeaturedPortfolio() {
           </p>
           <div className="flex flex-col mt-[1rem] gap-[0.5rem] lg:flex-row lg:gap-[1rem]">
             <a
-              href="https://cari-mentor-garudahack.vercel.app/"
+              href="https://carimentor.marchotridyo.com/"
               target="_blank"
               rel="noreferrer"
               className="button-primary"
