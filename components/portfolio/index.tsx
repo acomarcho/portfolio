@@ -9,7 +9,7 @@ const portfolios = [
     title: "CariMentor",
     imageUrl: "/portfolio/carimentor.png",
     description:
-      "Magnam architecto harum nemo eius. Nesciunt est aut dolores omnis similique nostrum. Ea earum similique iusto quas. Ut ut dicta omnis est qui dicta modi eos totam. Quos ipsa eos vitae perferendis ratione incidunt est.",
+      "CariMentor is a submission for GarudaHacks 4.0 in the youth track and won the runner up position. It is a fullstack application using Next as its' frontend and Express as its' backend (both in TypeScript). For the database, PostgreSQL with Prisma is used. Components were either self-made in Tailwind or from Mantine. I made the frontend and the design for this work.",
     visitUrl: "https://carimentor.marchotridyo.com",
     repoUrl: "https://github.com/acomarcho/carimentor",
   },
@@ -19,7 +19,7 @@ const portfolios = [
     title: "Tabina Lingkungan",
     imageUrl: "/portfolio/tabinalingkungan.png",
     description:
-      "Magnam architecto harum nemo eius. Nesciunt est aut dolores omnis similique nostrum. Ea earum similique iusto quas. Ut ut dicta omnis est qui dicta modi eos totam. Quos ipsa eos vitae perferendis ratione incidunt est.",
+      "This is a freelance work to make a landing page for PT Tabina Lingkungan, an environmental audit company that is based in Jatibening, Bekasi. It is made using Next (TypeScript) and Tailwind with some components from Mantine. I worked solo on this project.",
     visitUrl: "https://tabinalingkungan.com",
     repoUrl: "https://github.com/acomarcho/tabina-lingkungan",
   },
@@ -29,7 +29,7 @@ const portfolios = [
     title: "Cody Kit",
     imageUrl: "/portfolio/codykit.png",
     description:
-      "Magnam architecto harum nemo eius. Nesciunt est aut dolores omnis similique nostrum. Ea earum similique iusto quas. Ut ut dicta omnis est qui dicta modi eos totam. Quos ipsa eos vitae perferendis ratione incidunt est.",
+      "This is a freelance work to make a landing page for CodyKit, the first coding based learning toyu in Indonesia. It is made using React and vanilla CSS. Not only I made the site, but I also made the design for this project. I worked solo on this project.",
     visitUrl: "https://codykit.id",
     repoUrl: "https://github.com/acomarcho/codykit-web",
   },
@@ -39,7 +39,7 @@ const portfolios = [
     title: "DailyWins",
     imageUrl: "/portfolio/dailywins.png",
     description:
-      "Magnam architecto harum nemo eius. Nesciunt est aut dolores omnis similique nostrum. Ea earum similique iusto quas. Ut ut dicta omnis est qui dicta modi eos totam. Quos ipsa eos vitae perferendis ratione incidunt est.",
+      "This is a personal project that I use daily to journal and also to showcase my fullstack abilities. This is a fullstack project made in Next (TypeScript). It uses PostgreSQL as its' backend with Prisma as its' ORM. Here, I demonstrated my deployment abilities too by setting up a reverse proxy using Caddy and running it from my VPS.",
     visitUrl: "https://dailywins.marchotridyo.com",
     repoUrl: "https://github.com/acomarcho/dailywins",
   },
@@ -49,7 +49,7 @@ const portfolios = [
     title: "KanaPal",
     imageUrl: "/portfolio/kanapal.png",
     description:
-      "Magnam architecto harum nemo eius. Nesciunt est aut dolores omnis similique nostrum. Ea earum similique iusto quas. Ut ut dicta omnis est qui dicta modi eos totam. Quos ipsa eos vitae perferendis ratione incidunt est.",
+      "KanaPal is a project I made to help me when I was learning Japanese. It's made in Next (TypeScript), and all the logic is done in the frontend. This project allows people to learn hiragana and katakana easily.",
     visitUrl: "https://kanapal.marchotridyo.com",
     repoUrl: "https://github.com/acomarcho/kanapal",
   },
