@@ -29,7 +29,7 @@ const portfolios = [
     title: "Cody Kit",
     imageUrl: "/portfolio/codykit.png",
     description:
-      "This is a freelance work to make a landing page for CodyKit, the first coding based learning toyu in Indonesia. It is made using React and vanilla CSS. Not only I made the site, but I also made the design for this project. I worked solo on this project.",
+      "This is a freelance work to make a landing page for CodyKit, the first coding based learning toy in Indonesia. It is made using React and vanilla CSS. Not only I made the site, but I also made the design for this project. I worked solo on this project.",
     visitUrl: "https://codykit.id",
     repoUrl: "https://github.com/acomarcho/codykit-web",
   },
