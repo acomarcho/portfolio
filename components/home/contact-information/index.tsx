@@ -16,8 +16,8 @@ export default function ContactInformation() {
               height={32}
               quality={100}
             />
-            <a href="mailto:acoxstpd@gmail.com" className="paragraph">
-              acoxstpd@gmail.com
+            <a href="mailto:marchotridyo.work@gmail.com" className="paragraph">
+              marchotridyo.work@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-[1rem]">
