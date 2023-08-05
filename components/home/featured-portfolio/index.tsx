@@ -19,6 +19,20 @@ const DecorationVectors = () => {
         height={138}
         className="absolute right-0 top-[10rem]"
       />
+      <Image
+        src="/vectors/portfolio-1.svg"
+        alt=""
+        width={115}
+        height={218}
+        className="absolute left-0 bottom-[4rem]"
+      />
+      <Image
+        src="/vectors/portfolio-2.svg"
+        alt=""
+        width={63}
+        height={138}
+        className="absolute right-0 bottom-[10rem]"
+      />
     </>
   );
 };
@@ -57,7 +71,46 @@ export default function FeaturedPortfolio() {
               Check it out
             </a>
             <a
-              href="https://github.com/Serpent-MMMF/frontend-app"
+              href="https://github.com/acomarcho/carimentor"
+              target="_blank"
+              rel="noreferrer"
+              className="button-secondary"
+            >
+              See source code
+            </a>
+          </div>
+          <Image
+            src="/portfolio/kodekodeanid.png"
+            alt="kodekodean.id"
+            width={1280}
+            height={800}
+            className="z-10 mt-[1rem]"
+            quality={100}
+          />
+          <h1 className="paragraph font-bold">kodekodean.id</h1>
+          <p className="paragraph italic">
+            Personal, solo project to demonstrate my design, product, and
+            fullstack skills.
+          </p>
+          <p className="paragraph mt-[1rem]">
+            This is a fullstack application targeted for new college students at
+            ITB prepare for one of their courses, Computational Thinking. It
+            uses Next as a fullstack framework and uses technologies like
+            PostgreSQL, Prisma, Redis, as well as features like reading and
+            rendering markdown files on the browser. I not only made the site,
+            but also did the design and made all the content by myself.
+          </p>
+          <div className="flex flex-col mt-[1rem] gap-[0.5rem] lg:flex-row lg:gap-[1rem]">
+            <a
+              href="https://kodekodean.my.id/"
+              target="_blank"
+              rel="noreferrer"
+              className="button-primary"
+            >
+              Check it out
+            </a>
+            <a
+              href="https://github.com/acomarcho/kodekodean-v2"
               target="_blank"
               rel="noreferrer"
               className="button-secondary"
