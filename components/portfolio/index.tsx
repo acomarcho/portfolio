@@ -14,6 +14,16 @@ const portfolios = [
     repoUrl: "https://github.com/acomarcho/carimentor",
   },
   {
+    id: 6,
+    type: "Personal Project",
+    title: "kodekodean.id",
+    imageUrl: "/portfolio/kodekodeanid.png",
+    description:
+      "This is a fullstack application targeted for new college students at ITB prepare for one of their courses, Computational Thinking. It uses Next as a fullstack framework and uses technologies like PostgreSQL, Prisma, Redis, as well as features like reading and rendering markdown files on the browser. I not only made the site, but also did the design and made all the content by myself.",
+    visitUrl: "https://kodekodean.my.id",
+    repoUrl: "https://github.com/acomarcho/kodekodean-v2",
+  },
+  {
     id: 2,
     type: "Freelance Work",
     title: "Tabina Lingkungan",
