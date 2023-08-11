@@ -164,3 +164,45 @@ function printCar(car: Car) {
 ```
 
 If you try to put a `Car`, `Truck`, or that `randomObject` to `printCar`, every single one of them will be accepted because they all share the same accepted structure of Car.
+
+# Union Types
+
+A union type is essentially like an 'OR' in math - if you have `Type1 | Type2` it means it can either be Type1 or Type2. It's quite simple.
+
+The one I want to highlight is how you can use _tagged_ union types for cleaner code. Here is an example function that you might want to write:
+
+```ts
+const fetch = (): {name: string} | Error {
+  // Do something
+}
+```
+
+The function `fetch` either returns an object with structure `{name: string}` or an `Error`. While this is fine, processing it would be hard, i.e. you'd have to do something like this:
+
+```ts
+const x = fetch();
+
+if (x instanceof Error) {
+  // Handle error
+} else {
+  console.log(x.name);
+}
+```
+
+The portion, `x instanceof Error` is what you can call as a _type guard_.
+
+You can make the code more readable by introducing tags and returning it as a tuple with the tag on the 0th index.
+
+```ts
+const fetch = (): ["success", {name: string}] | ["error", Error] {
+  // Do something
+}
+
+const x = fetch();
+
+if (x[0] === "success") {
+  // Handle success case
+} else {
+  // Handle error case
+}
+```
