@@ -11,7 +11,7 @@ I've been using TypeScript for a lot of my projects, but I want to really study 
 
 _This is based on Frontend Masters' TypeScript Fundamentals v3._
 
-# Chapter 1: Why TypeScript?
+# Why TypeScript?
 
 It's mostly for **safety** and **linting** especially if you work in a good IDE like VS Code. It helps development by making sure things work as intended as best as it could (**do checks at compile time to avoid errors at run time**).
 
@@ -28,3 +28,53 @@ In this course, I learned some things you should do when you write TypeScript co
 (3) Often, in development, you'll fight hurdles like where you need to **generalize the types** as development goes on. You do this by making making a more general declaration beforehand.
 
 (4) Always try to explicitly state the return value of functions.
+
+# Objects, Arrays, and Tuples
+
+## Objects
+
+Here are some example to kickstart your understanding on how to type objects.
+
+```ts
+let myCar: {
+  year: number;
+  maker: string;
+  name: string;
+} = {
+  year: 2002,
+  maker: "Honda",
+  name: "Civic",
+};
+```
+
+If you want an object have many keys but they all have the same kind of value, you can use something called **index signature**.
+
+```ts
+let phonebook: {
+  [k: string]: string;
+};
+```
+
+This allows you to do stuffs like
+
+```ts
+phonebook.myself = "+62 812 812 812";
+phonebook.mom = "+62 812 812 813";
+```
+
+For arrays, it's quite simple:
+
+```ts
+let stringArray: string[];
+```
+
+If you want to make a tuple, you have to **explicitly state it as a tuple**.
+
+```ts
+// This is the correct way to do it:
+let myCar: [number, string, string] = [2002, "Honda", "Civic"];
+
+// And this is the wrong way to do it:
+let myCar = [2002, "Honda", "Civic"];
+// In the above example, myCar has  a type of (number | string)[]!
+```
