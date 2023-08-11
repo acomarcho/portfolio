@@ -62,6 +62,8 @@ phonebook.myself = "+62 812 812 812";
 phonebook.mom = "+62 812 812 813";
 ```
 
+## Arrays and Tuples
+
 For arrays, it's quite simple:
 
 ```ts
@@ -78,3 +80,87 @@ let myCar: [number, string, string] = [2002, "Honda", "Civic"];
 let myCar = [2002, "Honda", "Civic"];
 // In the above example, myCar has  a type of (number | string)[]!
 ```
+
+# A step back: What is type checking anyways?
+
+In the programming world, type checking is evaluations done to see if the type of something matches a certain condition.
+
+This could be done when you assign variables,
+
+```ts
+x = y; // Is x and y the same type?
+```
+
+or when you call functions,
+
+```ts
+x = f(); // Is x and the return type of f the same type?
+```
+
+... and many more. That is called type evaluation.
+
+## Static typing and dynamic typing
+
+In a statically typed programming language, type checkings are done at compile time, not run time. This is what TypeScript does.
+
+This is different than, let's say, Python, which is a dynamically typed programming language by default:
+
+```py
+my_number = input("Please give me a number!")
+print(f"Your number, divided by 5, is {my_number / 5}")
+```
+
+That code above will crash after you entered a number because when `my_number / 5` is evaluated at run time by Python, it says to you, "Hey, you can't give me a string and expect me to divide it by 5!"
+
+The term **duck typing** you often see JavaScript called is just another name for dynamic typing.
+
+## Nominal typing and structural typing
+
+Nominal typing refers to checks to see whether something has a type with the exact name, such as in Java.
+
+```java
+class Car {
+  private int year;
+  private String name;
+}
+
+class Truck {
+  private int year;
+  private String name;
+}
+
+void printCar(Car x) {
+  // ...
+}
+```
+
+If you put a `Truck` inside the `printCar` function, it will reject because it's expecting a `Car`, not a `Truck`.
+
+**Nominal typing is not how TypeScript behaves**.
+
+TypeScript behaves using structural typing -- _it checks whether the structure is the same or not_.
+
+In the previous example,
+
+```ts
+class Car {
+  year: number;
+  name: string;
+}
+
+class Truck {
+  year: number;
+  name: string;
+}
+
+const randomObject = {
+  year: 1990,
+  name: "Ronald",
+};
+
+function printCar(car: Car) {
+  // ...
+}
+```
+
+If you try to put a `Car`, `Truck`, or that `randomObject` to `printCar`, every single one of them will be accepted because they all share the same accepted structure of Car.
