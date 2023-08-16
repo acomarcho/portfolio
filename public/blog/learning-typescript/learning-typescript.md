@@ -350,3 +350,37 @@ function handleNumber2(x: number, handler: (x: number) => undefined);
 ```
 
 If you pass a handler that returns something other than undefined, `handleNumber` will work just fine, but `handleNumber2` will output an error.
+
+# Function overloading
+
+This is a bit complex, but let's say you have a scenario like this:
+
+```ts
+type NumberHandler = (x: number) => number;
+type StringHandler = (x: string) => string;
+
+function myHandler(x: number | string, action: NumberHandler | StringHandler) {
+  // Do something here
+}
+```
+
+Say, you want the action to be `NumberHandler` only if x is a number and `StringHandler` only if x is a string.
+
+To make this possible, you need something called **function overloading**.
+
+```ts
+type NumberHandler = (x: number) => number;
+type StringHandler = (x: string) => string;
+
+/**
+ * Overload functions by specifying the correct signatures.
+ */
+function myHandler(x: number, action: NumberHandler);
+function myHandler(x: string, action: StringHandler);
+/**
+ * Now, put the actual implementation below.
+ */
+function myHandler(x: number | string, action: NumberHandler | StringHandler) {}
+```
+
+One thing to make sure is that the signatures in the implementation must accommodate all the signatures you specified when you overload it.
