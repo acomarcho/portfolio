@@ -206,3 +206,103 @@ if (x[0] === "success") {
   // Handle error case
 }
 ```
+
+# Intersection Types
+
+Here's where things get quite interesting. _Intersections might confuse you_, but it's helpful to think it as a venn diagram where the intersection is a **place where both properties exists**.
+
+So, if you have, say,
+
+```ts
+type A = {
+  name: string;
+};
+```
+
+and
+
+```ts
+type A = {
+  age: number;
+};
+```
+
+The type, `A & B` (intersection of A and B) would be
+
+```ts
+type IntersectionofAAndB = {
+  name: string;
+  age: number;
+};
+```
+
+because it contains both properties! (name from A and age from B)
+
+# Interfaces
+
+In TypeScript, there are also interfaces. Sure, you can use them like a type, but it's much more strict. **You cannot use things like union types or intersection types**, you can only define an interface as an object.
+
+```ts
+interface AllowedInterface {
+  name: string;
+  age: number;
+}
+
+// Can't have an interface that is a union or intersection!
+
+const myObject: AllowedInterface = {
+  name: "John",
+  age: 12,
+};
+```
+
+Having an interface is useful if you want give a 'contract' to classes to make sure they implement something.
+
+```ts
+interface CuteStuff {
+  voice: string;
+}
+
+class Dog implements CuteStuff {
+  // This Dog class must implement the voice property.
+}
+```
+
+You can have two definitions of an interface, too. It will work 'like' an intersection type.
+
+For types, this will crash:
+
+```ts
+type A = {
+  name: string;
+};
+
+// This line below here will output an error because you have two definitions of A
+type A = {
+  age: number;
+};
+```
+
+But, for intersections, it will not!
+
+```ts
+interface A = {
+  name: string;
+}
+
+interface A = {
+  age: number;
+}
+
+let myObject: A;
+
+/**
+ * myObject now has to comply with type {name: string; age: number;}
+ */
+```
+
+## When to use types or interfaces?
+
+Use types if you want to use union/intersection types.
+
+Use interfaces if you want to 'create contracts' for classes or you want the users of your code to be able to add properties to it.
