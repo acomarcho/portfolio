@@ -384,3 +384,95 @@ function myHandler(x: number | string, action: NumberHandler | StringHandler) {}
 ```
 
 One thing to make sure is that the signatures in the implementation must accommodate all the signatures you specified when you overload it.
+
+# Working with classes
+
+There is a problem in JavaScript where you can't really know what things you have in a class:
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+/**
+ * What properties does a Person have?
+ * What type is name?
+ * What type is age?
+ */
+```
+
+Using TypeScript, you can make it clearer!
+
+```ts
+class Person {
+  name: string;
+  age: string;
+  constructor(name: string, age: string) {
+    this.name = name;
+    this.age = age;
+  }
+}
+```
+
+## Access modifiers
+
+I assume you readers have learnt in your OOP class about these three fields: _public_, _private_, and _protected_.
+
+TypeScript allows you to do that -- but bear in mind that **this is only works in the linter world, at runtime it's still pretty much exposed**.
+
+```ts
+class Person {
+  private name: string;
+  private age: string;
+  constructor(name: string, age: string) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+/**
+ * Now, name and age can only be seen inside of the Person class!
+ */
+```
+
+## Shorthand for constructing attributes
+
+To avoid writing a lot of duplicate `this.<var_name>` assignments, you can do things like this in TypeScript:
+
+```ts
+class Person {
+  constructor(private name: string, private age: string) {}
+}
+
+/**
+ * This is basically the same code as the previous code block.
+ */
+```
+
+## Readonly attributes
+
+You can define something that behaves like a constant defined using `const` for a class with `readonly`, i.e.
+
+```ts
+class Person {
+  private readonly name;
+  private age string;
+  constructor(name: string, age: string) {
+    /**
+     * You can assign name here because here is where you give it's initial value
+     */
+    this.name = name;
+    this.age = age;
+  }
+
+  public changeName(name: string) {
+    /**
+     * This function is not valid because name is readonly, you can't reassign it
+     */
+    this.name = name;
+  }
+}
+```
