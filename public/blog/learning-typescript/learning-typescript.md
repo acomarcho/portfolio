@@ -29,7 +29,7 @@ In this course, I learned some things you should do when you write TypeScript co
 
 (4) Always try to explicitly state the return value of functions.
 
-# Objects, Arrays, and Tuples
+# Objects, arrays, and tuples
 
 ## Objects
 
@@ -62,7 +62,7 @@ phonebook.myself = "+62 812 812 812";
 phonebook.mom = "+62 812 812 813";
 ```
 
-## Arrays and Tuples
+## Arrays and tuples
 
 For arrays, it's quite simple:
 
@@ -165,7 +165,7 @@ function printCar(car: Car) {
 
 If you try to put a `Car`, `Truck`, or that `randomObject` to `printCar`, every single one of them will be accepted because they all share the same accepted structure of Car.
 
-# Union Types
+# Union types
 
 A union type is essentially like an 'OR' in math - if you have `Type1 | Type2` it means it can either be Type1 or Type2. It's quite simple.
 
@@ -207,7 +207,7 @@ if (x[0] === "success") {
 }
 ```
 
-# Intersection Types
+# Intersection types
 
 Here's where things get quite interesting. _Intersections might confuse you_, but it's helpful to think it as a venn diagram where the intersection is a **place where both properties exists**.
 
@@ -306,3 +306,47 @@ let myObject: A;
 Use types if you want to use union/intersection types.
 
 Use interfaces if you want to 'create contracts' for classes or you want the users of your code to be able to add properties to it.
+
+# Function types
+
+You can define the signature of a callable type (i.e. functions) using this kind of syntax:
+
+```ts
+/**
+ * Using ':' to specify return type
+ */
+interface MyFunction {
+  (a: number, b: number): number;
+}
+
+/**
+ * Using '=>' to specify return type
+ */
+type MyFunction2 = (a: number, b: number) => number;
+
+const add: MyFunction = (a, b) => a + b;
+```
+
+## The return type `void`
+
+In JavaScript, we know that functions that returns nothing will return `undefined`.
+
+```js
+/**
+ * Output: undefined
+ */
+console.log(console.log(4));
+```
+
+In TypeScript, if you want to accept that a function you expect to not return anything, **do not tell that it returns undefined**, instead **say that it returns void**.
+
+Returning undefined means that **it will expect you to return undefined specifically** but returning void means **to ignore whatever the return type is**.
+
+Example:
+
+```ts
+function handleNumber(x: number, handler: (x: number) => void);
+function handleNumber2(x: number, handler: (x: number) => undefined);
+```
+
+If you pass a handler that returns something other than undefined, `handleNumber` will work just fine, but `handleNumber2` will output an error.
