@@ -573,3 +573,77 @@ if (myVehicle instanceof Car) {
 ```
 
 This way, TypeScript helps you to handle cases that you might've forgotten when you add new stuffs along the way.
+
+# Type guards
+
+There's a lot of way you can check for types, i.e.
+
+```ts
+type MyType = undefined | string | Date | { name: string };
+
+let val: MyType = getRandomValue();
+
+if (val === undefined) {
+  // val is undefined
+} else if (typeof val === "string") {
+  // val is a string
+} else if (val instanceof Date) {
+  // val is a Date
+} else if ("name" in val) {
+  // val is a type of { name: string }
+} else {
+  // val is in the type of 'never', this block shouldn't be reached
+}
+```
+
+But say, you have a more complex type and want to create a function that checks for that certain type. There's two ways to do this.
+
+## Using `is`
+
+You can assure TypeScript that something is a type of something by using the keyword `is`:
+
+```ts
+type Person = {
+  name: string;
+  age: number;
+};
+
+function isPerson(personLike: any): personLike is Person {
+  return (
+    personLike &&
+    "name" in personLike &&
+    typeof personLike["name"] === "string" &&
+    "age" in personLike &&
+    typeof personLike["age"] === "number"
+  );
+}
+```
+
+_(yes, the checking is a bit tedious, but we've to deal with it)_
+
+Doing it this way, _you must be absolutely sure_ that what you write inside the condition is right.
+
+## Using `asserts is`
+
+Using `is` doesn't guarantee you are free from runtime errors. At times, you might want to throw errors if the actual thing is not a person at runtime. You can use this keyword, i.e.
+
+```ts
+type Person = {
+  name: string;
+  age: number;
+};
+
+function assertIsPerson(personLike: any): asserts personLike is Person {
+  if (
+    !(
+      personLike &&
+      "name" in personLike &&
+      typeof personLike["name"] === "string" &&
+      "age" in personLike &&
+      typeof personLike["age"] === "number"
+    )
+  ) {
+    throw new Error(`Assertion failed: ${personLike} isn't a Person!`);
+  }
+}
+```
