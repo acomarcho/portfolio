@@ -528,3 +528,48 @@ if (typeof y === "string") {
 Generally, you'd use `any` in situations where you are moving from JavaScript to TypeScript incrementally. You'll move gradually from the easier types first and leave the harder types on `any` and work on it incrementally.
 
 `unknown`, meanwhile is quite useful when you get a return response, say from an API. It could be anything (i.e. an error response or a successful response), so you'd want to check it first with type guards before processing it.
+
+# Bottom values
+
+There is a type called `never` in TypeScript. It means that value cannot hold anything. _Why is this useful?_
+
+Bottom values are useful when you absolutely want to check if your conditionals are exhaustive. Let's take a look at this example.
+
+```ts
+type Vehicle = Car | Truck;
+
+const myVehicle: Vehicle = randomVehicle();
+
+if (myVehicle instanceof Car) {
+  // Do something as a car
+} else if (myVehicle instanceof Truck) {
+  // Do something as a truck
+} else {
+  // This block should and will never be reached!
+  const neverData: never = myVehicle;
+}
+```
+
+In the last block, `neverData` will have a type of `never`. How is this useful?
+
+Let's say as your platform grows, you might add more vehicles later, e.g. you'll change the type `Vehicle` to `Car | Truck | Boat`:
+
+```ts
+type Vehicle = Car | Truck | Boat;
+
+const myVehicle: Vehicle = randomVehicle();
+
+if (myVehicle instanceof Car) {
+  // Do something as a car
+} else if (myVehicle instanceof Truck) {
+  // Do something as a truck
+} else {
+  /**
+   * This should be the boat case, but you're stating it as a never!
+   * Because it shouldn't be a never, TypeScript will give you an error to handle the case.
+   */
+  const neverData: never = myVehicle;
+}
+```
+
+This way, TypeScript helps you to handle cases that you might've forgotten when you add new stuffs along the way.
