@@ -647,3 +647,44 @@ function assertIsPerson(personLike: any): asserts personLike is Person {
   }
 }
 ```
+
+# Nullish values
+
+You can use the `!.` operator to tell TypeScript that you're certain that something has the property of something. Let's take a look at an example.
+
+```ts
+type Cart = {
+  fruits?: string[];
+  vegetables?: string[];
+};
+
+const emptyCart: Cart = {};
+
+/**
+ * This line below will output an error in TypeScript.
+ * This is due to the fact it's not sure whether emptyCart.fruits is actually there or not.
+ */
+emptyCart.fruits.push("Apple");
+
+/**
+ * But, this will do fine.
+ * It tells TypeScript that you're absolutely sure that fruits is actually there.
+ */
+emptyCart.fruits!.push("Apple");
+```
+
+It's not a good idea to do this, though. You'd probably better off with something like this:
+
+```ts
+type Cart = {
+  fruits?: string[];
+  vegetables?: string[];
+};
+
+const emptyCart: Cart = {};
+
+if (emptyCart.fruits) {
+  // Better use type guards to prevent runtime errors!
+  emptyCarts.fruits.push("Apple");
+}
+```
