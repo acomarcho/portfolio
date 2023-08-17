@@ -476,3 +476,55 @@ class Person {
   }
 }
 ```
+
+# Top values
+
+Let's discuss about these two types: `any` and `unknown`. They're similar in a way that they accept any value.
+
+```ts
+/**
+ * This is fine to do
+ */
+let x: any = 5;
+x = "Hello";
+x = [1, 5, 7];
+
+/**
+ * And so this is too!
+ */
+let y: unknown = 5;
+y = "Hello";
+y = [1, 5, 7];
+```
+
+The difference happens when you try to actually use the variable.
+
+```ts
+/**
+ * TypeScript will allow this!
+ */
+let x: any = 5;
+x.someRandomProperty.doSomething();
+
+/**
+ * But, it will not allow this to happen.
+ */
+let y: unknown = 5;
+y.someRandomProperty.doSomething();
+```
+
+You actually have to use type guards when using `unknown`, i.e.
+
+```ts
+let y: unknown = "Hello World!";
+
+if (typeof y === "string") {
+  // You now can use y as if it was a string.
+}
+```
+
+## When to use them?
+
+Generally, you'd use `any` in situations where you are moving from JavaScript to TypeScript incrementally. You'll move gradually from the easier types first and leave the harder types on `any` and work on it incrementally.
+
+`unknown`, meanwhile is quite useful when you get a return response, say from an API. It could be anything (i.e. an error response or a successful response), so you'd want to check it first with type guards before processing it.
