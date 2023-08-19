@@ -688,3 +688,140 @@ if (emptyCart.fruits) {
   emptyCarts.fruits.push("Apple");
 }
 ```
+
+# Generics
+
+Use generics on cases where you want a function to accept anything and return anything _without you losing the helpful type inference_. Let's take a look at an example where you want to create a function that transforms a list of something into dictionaries.
+
+```ts
+type Car = {
+  id: number;
+  year: number;
+  name: string;
+};
+
+const cars: Car[] = [
+  {
+    id: 1,
+    year: 2002,
+    name: "Honda Civic",
+  },
+  {
+    id: 2,
+    year: 2020,
+    name: "Lamborghini Urus",
+  },
+];
+
+type Dict = {
+  [k: string]: any;
+};
+
+function listToDict(list: any[], idSetter: (item: any) => string): Dict {
+  const dict: Dict = {};
+
+  for (const x of list) {
+    dict[idSetter(x)] = x;
+  }
+
+  return dict;
+}
+
+console.log(listToDict(cars, (car) => car.id.toString()));
+```
+
+There's just one problem: you're having a lot of `any` here. When you access `dict.carId.maker` you won't be warned because it assumes that `dict.carId` is a type of `any`, not a type of `Car`.
+
+Generics comes to save your day! Here's an example how you'd use them:
+
+```ts
+type Car = {
+  id: number;
+  year: number;
+  name: string;
+};
+
+const cars: Car[] = [
+  {
+    id: 1,
+    year: 2002,
+    name: "Honda Civic",
+  },
+  {
+    id: 2,
+    year: 2020,
+    name: "Lamborghini Urus",
+  },
+];
+
+type Dict<T> = {
+  [k: string]: T;
+};
+
+function listToDict<T>(list: T[], idSetter: (item: T) => string): Dict<T> {
+  const dict: Dict<T> = {};
+
+  for (const x of list) {
+    dict[idSetter(x)] = x;
+  }
+
+  return dict;
+}
+
+const carDict = listToDict(cars, (car) => car.id.toString());
+console.log(carDict);
+```
+
+Now, when you try to access, let's say, `carDict[1].`, you'll be presented with only `[id, year, name]` to select. It now sees that each key holds a type of Car!
+
+The `<T>` is what you'd call a type parameter. It allows you to parameterize any type you'd like to accept so it doesn't lose it's typing at the end (unlike when you use `any`).
+
+## Giving constraints to your generic
+
+Let's say you want for sure to be certain that you only want to accept all types that have the property `id` in it. In other words, _you want to make sure that T has a property of `id` in it_.
+
+To do so, you can use the `extends` keyword for your type parameter!
+
+```ts
+type HasId = {
+  id: number;
+};
+
+type Car = {
+  id: number;
+  year: number;
+  name: string;
+};
+
+const cars: Car[] = [
+  {
+    id: 1,
+    year: 2002,
+    name: "Honda Civic",
+  },
+  {
+    id: 2,
+    year: 2020,
+    name: "Lamborghini Urus",
+  },
+];
+
+type Dict<T> = {
+  [k: string]: T;
+};
+
+function listToDict<T extends HasId>(list: T[]): Dict<T> {
+  const dict: Dict<T> = {};
+
+  for (const x of list) {
+    dict[x.id.toString()] = x;
+  }
+
+  return dict;
+}
+
+const carDict = listToDict(cars);
+console.log(carDict);
+```
+
+Now, when you access `T`, you can be sure that `T` will have an `id` in it -- no more need to create an idSetter function like in other examples!
