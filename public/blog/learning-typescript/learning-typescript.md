@@ -825,3 +825,5 @@ console.log(carDict);
 ```
 
 Now, when you access `T`, you can be sure that `T` will have an `id` in it -- no more need to create an idSetter function like in other examples!
+
+## _This marks the end of this post. Thank you for reading, hope you find it useful!_
