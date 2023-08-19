@@ -2,7 +2,7 @@
 slug: learning-typescript
 title: Learn TypeScript with Me!
 summary: Here, I tell you my story and thoughts when learning TypeScript along the way. If you see this, I'm still on my learning journey, so be sure to check it often for updates!.
-date: 2023-07-26
+date: 2023-08-10
 ---
 
 # What's the motivation of writing this blog?
