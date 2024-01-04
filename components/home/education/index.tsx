@@ -23,7 +23,7 @@ export default function Education() {
           <div>
             <p className="paragraph font-bold">Information Technology</p>
             <p className="date">2020 - 2024</p>
-            <p className="date">GPA: 3.98/4.00</p>
+            <p className="date">GPA: 3.99/4.00</p>
           </div>
         </Fade>
       </div>
