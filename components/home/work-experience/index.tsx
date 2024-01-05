@@ -21,9 +21,15 @@ export default function WorkExperience() {
           </div>
           <div>
             <p className="paragraph font-bold">
+              Software Engineer (Fullstack)
+            </p>
+            <p className="date">January 2024 - Present</p>
+          </div>
+          <div>
+            <p className="paragraph font-bold">
               Software Engineer Intern (Fullstack)
             </p>
-            <p className="date">May 2023 - Present</p>
+            <p className="date">May 2023 - January 2024</p>
           </div>
           <div>
             <p className="paragraph font-bold">
