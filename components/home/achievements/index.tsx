@@ -12,6 +12,18 @@ export default function Achievements() {
             <IconTrophy />
             <div>
               <p className="paragraph font-bold">
+                5th place at Compfest Senior Competitive Programming Contest
+              </p>
+              <p className="date">
+                Automatically eligible for ICPC Asia Jakarta
+              </p>
+              <p className="date mt-[0.5rem]">Oct 2023</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-[1rem]">
+            <IconTrophy />
+            <div>
+              <p className="paragraph font-bold">
                 Runner up for youth track at GarudaHacks 4.0 Hackathon
               </p>
               <p className="date mt-[0.5rem]">July 2023</p>
