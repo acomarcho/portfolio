@@ -10,6 +10,22 @@ export default function WorkExperience() {
           <h1 className="heading font-bold">Work Experience</h1>
           <div className="flex items-center gap-[1rem]">
             <Image
+              src="/images/marinachain.png"
+              width={128}
+              height={128}
+              alt="MarinaChain"
+              className="w-[2rem] lg:w-[4rem]"
+              quality={100}
+            />
+            <p className="paragraph font-bold">MarinaChain</p>
+          </div>
+          <div>
+            <p className="paragraph font-bold">Frontend Engineer</p>
+            <p className="date">April 2024 - Present</p>
+          </div>
+          <div className="mt-4" />
+          <div className="flex items-center gap-[1rem]">
+            <Image
               src="/images/pintarnya.png"
               width={128}
               height={128}
@@ -20,9 +36,7 @@ export default function WorkExperience() {
             <p className="paragraph font-bold">Pintarnya</p>
           </div>
           <div>
-            <p className="paragraph font-bold">
-              Software Engineer (Fullstack)
-            </p>
+            <p className="paragraph font-bold">Software Engineer (Fullstack)</p>
             <p className="date">January 2024 - Present</p>
           </div>
           <div>
